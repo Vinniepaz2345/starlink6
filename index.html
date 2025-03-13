@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service.starlink.ke</title>
+    <style>
+        /* ... (Your existing CSS) ... */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f9b0f, #000000);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+            color: #333;
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #148122;
+        }
+        .payment-info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+            background: #e0f7da;
+            padding: 8px;
+            border-radius: 6px;
+        }
+        button {
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .payment-btn {
+            background: #148122;
+            color: #ffffff;
+        }
+        .payment-btn:hover {
+            background: #0f7b0f;
+        }
+        .copy-btn {
+            background: #ff9800;
+            color: #fff;
+        }
+        .copy-btn:hover {
+            background: #e68900;
+        }
+        .till-info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #148122;
+            font-weight: bold;
+            background: #e0f7da;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .inquiry {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #444;
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .email {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .email:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function showPaymentPrompt(amount, isFreeTrial = false) {
+            if (isFreeTrial) {
+                alert("Free payment option is only option for devices paid at least once everyday.");
+            } else {
+                alert(`Pay Ksh ${amount} to till 3133426`);
+            }
+        }
+        function copyTillNumber() {
+            navigator.clipboard.writeText("4646254").then(() => {
+                alert("Till number copied!");
+            }).catch(err => {
+                alert("Failed to copy: " + err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Package</h1>
+        <div class="payment-info">Starlink Home <i>(Only Safaricom)</i></div> 
+        <button class="payment-btn" onclick="showPaymentPrompt(0, true)">5 minutes free trial</button>       
+        <button class="payment-btn" onclick="showPaymentPrompt(80)">24 hours - 5GB (Ksh 80)</button>
+        <button class="payment-btn" onclick="showPaymentPrompt(250)">7 Days - 10GB (Ksh 250)</button>
+        <button class="payment-btn" onclick="showPaymentPrompt(400)">21 Days - 35GB (Ksh 400)</button>      
+        <button class="payment-btn" onclick="showPaymentPrompt(600)">31Days - Unlimited (Ksh 600)</button>
+        
+        <div class="till-info">Till Number: <strong>4646254</strong></div>
+        <button class="copy-btn" onclick="copyTillNumber()">Copy Till</button>
+
+        <div class="inquiry">
+            <p>In case of inquiry, contact us at:</p>
+            <a href="mailto:Helplinestarl@gmail.com" class="email">support@starlink.ke</a>
+        </div>
+    </div>
+</body>
+</html>
